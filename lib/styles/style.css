@@ -9,6 +9,10 @@ html {
   font-size: 12px;
 }
 
+body {
+  font-family: arial, helvetica, verdana, sans-serif;
+}
+
 body, html {
   width: 100%;
   max-height: 100%;
@@ -16,6 +20,184 @@ body, html {
   overflow-y: hidden;
 }
 
-body {
-  font-family: arial, helvetica, verdana, sans-serif;
+
+main {
+  --main-outline-color: #d6d6d6;
+  --main-background: white;
+  --highlight-color: #0096f8;
+  --arrow-inline-size: 4rem;
+  --panel-size: 600px;
+}
+
+#my-picker {
+  margin: 2rem;
+}
+
+dove-panel {
+  width: 600px;
+  overflow: hidden;
+  display: block;
+}
+@keyframes movement {                                                                                            
+    from {                                                                                               
+        transform: translate(0px,0);
+    }
+    to {                                                                                                          
+        transform: translate(-500px,0);
+    }
+}
+dove-panel .container {
+  width: 1200px;
+}
+dove-panel.open .container {
+  transform: translate(-500px,0);
+  animation: movement 0.5s linear;
+}
+dove-panel .container .pane {
+  width: 600px;
+  height: 400px;
+  background: var(--main-background);
+  float: left;
+}
+
+.menu li {
+  display: flex;
+  min-height: 4rem;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--main-outline-color);
+}
+
+.menu .detail, .menu ul {
+  min-inline-size: var(--panel-size);
+  width: var(--panel-size);
+  display: inline-block;
+  float: left;
+/*
+  transition: visibility 1s linear;
+  visibility: collapse;
+*/
+}
+
+.menu .detail.detail-expand {
+  //visibility: visible;
+}
+
+.menu li span {
+  flex: 1;
+  max-inline-size: calc(var(--panel-size) - var(--arrow-inline-size) - 3rem);
+  padding-inline-start: 1rem;
+  padding-inline-end: 1rem;
+  /*
+    word-wrap: https://twitter.com/KingstonTime/status/725690382714060801
+  */
+  word-break: break-all;
+}
+
+.menu li a {
+  --foreground-color: black;
+  --background-color: var(--highlight-color);
+  text-decoration: none;
+  background: var(--background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu li a:hover {
+  --background-color: red;
+}
+
+.menu li .fill {
+  flex: 1;
+  align-self: stretch;
+}
+
+.menu li .expand {
+  --foreground-color: black;
+  --background-color: white;
+  inline-size: var(--arrow-inline-size);
+  min-block-size: 2rem;
+  border-left: 1px solid var(--main-outline-color);
+}
+.menu li .expand:hover {
+  --background-color: ;
+  cursor: pointer;
+  background: var(--foreground-color);
+  color: var(--background-color);
+}
+
+.menu .tag {
+  display: block;
+  align-self: center;
+  text-transform: uppercase;
+  border: 1px solid var(--highlight-color);
+  margin: .2rem;
+  border-radius: 2px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+reef-picker {
+  display: block;
+  font-weight: bold;
+  max-inline-size: var(--panel-size);
+  border: 1px solid var(--main-outline-color);
+  overflow: hidden;
+}
+
+@keyframes move_eye {
+    from {                                                                                               
+        transform: translate(0px,0);
+    }
+    to {                                                                                                         
+        transform: translate(-500px,0);
+    }
+}
+
+reef-picker .container {
+  width: calc(var(--panel-size) * 2);
+}
+
+reef-picker.open ul {
+  animation: move_eye 3s linear 0s infinite normal;
+  transform: translate(-500px,0);
+  
+  //margin-inline-start: calc(0 - var(--panel-size));
+}
+/*
+reef-picker ul {
+  min-inline-size: var(--panel-size);
+  flex: 1;
+}
+*/
+reef-picker li {
+  display: flex;
+  min-height: 4rem;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--main-outline-color);
+}
+
+reef-picker .detail, reef-picker ul {
+  min-inline-size: var(--panel-size);
+  width: var(--panel-size);
+  display: inline-block;
+  float: left;
+/*
+  transition: visibility 1s linear;
+  visibility: collapse;
+*/
 }
