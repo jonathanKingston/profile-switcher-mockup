@@ -9,90 +9,68 @@
     </header>
     <main>
 
-<dove-panel id="mee-picker">
-  <div class="container">
-  <div class="pane">
-          <ul class="menu">
-            <li>
-              <span>Default profile</span>
-              <a href="#default-2" class="expand">&gt;</a>
-            </li>
-            <li>
-              <span>dev-edition-default</span>
-              <a class="expand">&gt;</a>
-            </li>
-            <li>
-              <span>empty</span>
-              <a class="expand">&gt;</a>
-            </li>
-            <li>
-              <span>
-                Lightbeam
-              </span>
-              <div class="tag">Default</div>
-              <a class="expand">&gt;</a>
-            </li>
-            <li>
-              <span>test2</span>
-              <a class="expand">&gt;</a>
-            </li>
-            <li>
-              <span>Myreallylongprofilenamewhoknowswhowoulddothisbutwhoknowsitcouldhappenonedayandwedontwanttobeoutofajobbecauseweforgotabouttheseusers</span>
-              <a class="expand">&gt;</a>
-            </li>
-            <li>
-              <a class="fill">Create a new profile</a>
-            </li>
-          </ul>
-  </div>
-  <div class="pane" id="default-2">
-    bb
-  </div>
-  </div>
-</dove-panel>
-
-
-      <reef-picker id="my-picker">
+      <dove-panel id="mee-picker">
         <div class="container">
-          <ul class="menu">
-            <li>
-              <span>Default profile</span>
-              <a href="#default" class="expand">&gt;</a>
-            </li>
-            <li>
-              <span>dev-edition-default</span>
-              <a class="expand">&gt;</a>
-            </li>
-            <li>
-              <span>empty</span>
-              <a class="expand">&gt;</a>
-            </li>
-            <li>
-              <span>
-                Lightbeam
-              </span>
-              <div class="tag">Default</div>
-              <a class="expand">&gt;</a>
-            </li>
-            <li>
-              <span>test2</span>
-              <a class="expand">&gt;</a>
-            </li>
-            <li>
-              <span>Myreallylongprofilenamewhoknowswhowoulddothisbutwhoknowsitcouldhappenonedayandwedontwanttobeoutofajobbecauseweforgotabouttheseusers</span>
-              <a class="expand">&gt;</a>
-            </li>
-            <li>
-              <a class="fill">Create a new profile</a>
-            </li>
+        <dove-pane>
+                <ul class="menu">
+                  <li class="default">
+                    <span>Default profile</span>
+                    <div class="tag">Default</div>
+                    <a href="#default-2" class="expand"></a>
+                  </li>
+                  <li>
+                    <span>dev-edition-default</span>
+                    <div class="tag">Default</div>
+                    <a class="expand"></a>
+                  </li>
+                  <li>
+                    <span>empty</span>
+                    <div class="tag">Default</div>
+                    <a class="expand"></a>
+                  </li>
+                  <li>
+                    <span>
+                      Lightbeam
+                    </span>
+                    <div class="tag">Default</div>
+                    <a class="expand"></a>
+                  </li>
+                  <li>
+                    <span>test2</span>
+                    <div class="tag">Default</div>
+                    <a class="expand"></a>
+                  </li>
+                  <li>
+                    <span>Myreallylongprofilenamewhoknowswhowoulddothisbutwhoknowsitcouldhappenonedayandwedontwanttobeoutofajobbecauseweforgotabouttheseusers</span>
+                    <div class="tag">Default</div>
+                    <a class="expand"></a>
+                  </li>
+                  <li>
+                    <a class="fill">Create a new profile</a>
+                  </li>
+                </ul>
+        </dove-pane>
+        <dove-pane class="profile-pane" id="default-2">
+          <h2>Default profile</h2>
+          <ul class="actions">
+            <li>Start</li>
+            <li>Start and Work Offline</li>
+            <li>Rename</li>
           </ul>
-          <div class="detail" id="default">
-           peep
+          <div class="block">
+            <h3>Root directory</h3>
+            <div>/Users/jonathan/Library/Application Support/Firefox/Something/Something</div>
+            <button>Show in finder</button>
           </div>
+          <div class="block">
+            <h3>Local directory</h3>
+            <div>/Users/jonathan/Library/Application Support/Firefox/Something/Something</div>
+            <button>Show in finder</button>
+          </div>
+          <button class="delete">Delete profile</button>
+        </dove-pane>
         </div>
-      </reef-picker>
-
-
+      </dove-panel>
     </main>
     <footer>
       Foot
